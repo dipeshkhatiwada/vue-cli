@@ -1,15 +1,15 @@
 <template>
   <div>
-    <h1>helloNepal</h1>
+    <h1>h</h1>
     <TodoList/>
   </div>
 </template>
 
 <script>
-import TodoList from './components/todoList.hljs-value';
+import TodoList from './components/TodoList.vue';
 export default {
   name:"App",
-  Components:{
+  components:{
     TodoList
     }
 };

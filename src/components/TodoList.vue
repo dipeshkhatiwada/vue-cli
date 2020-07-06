@@ -1,9 +1,33 @@
 <template>
-    <h1>hello from todp list</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="display-3"> Vue crash course </p>
+            </div>
+        </div>
+        <div class="row">
+            <p>Add create form</p>
+        </div>
+        <div class="row">
+            <div class="c0l-12 col-lg-6">
+                <ul class="list-group">
+                    <Todo v-for="(todo, index) in todos" :key="index"
+                    :todoString="todo.todoString"
+                    :completed="todo.completed"
+                    />
+                </ul>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
+import Todo from './Todo.vue';
 export default {
+  name:"TodoList",
+  components:{
+      Todo
+  },
   data(){
       return{
           todos:[
@@ -28,7 +52,7 @@ export default {
             todo.todoString = newTodoString;
         },
         deleteTodo(deleteTodo){
-            this.todos = this.todos.fiter(todo => todo.todoString !== deleteTodo.todoString)
+            this.todos = this.todos.fiter(todo => todo.todoString !== deleteTodo)
         },
         }
 }
